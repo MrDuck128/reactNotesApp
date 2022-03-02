@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import Form from './components/Form';
+import NoteDisplay from './components/NoteDisplay';
+import Select from './components/Select';
+import { notesList } from './notes'
 
 function App() {
+  const [notes, setNotes] = useState(notesList);
+  const [type, setType] = useState('all')
+  const [group, setGroup] = useState('')
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='page'>
+      <Select setType={setType} setGroup={setGroup} />
+      <Form notes={notes} setNotes={setNotes} />
+      <NoteDisplay notes={notes} type={type} group={group} />
     </div>
   );
 }

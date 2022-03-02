@@ -5,9 +5,56 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: antiquewhite;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.page {
+  min-height: 100vh;
+  background-color: whitesmoke;
+  width: 80%;
+  margin: auto;
+}
+
+.formPadding {
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+.inputNote {
+  text-align: center;
+}
+
+.separator {
+  margin-left: 1em;
+}
+
+.note {
+  margin-top: 1.5em;
+  margin-left: 2.5em;
+  margin-right: 2.5em;
+  background-color: white;
+  word-break: break-all;
+  white-space: pre-wrap;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.selectPadding {
+  padding-top: 5%;
+  padding-left: 5%;
+  padding: 1em 2em;
+  text-align: center;
+}
+
+.selectGroup {
+  display: inline-block;
+  padding: 1em 1em;
+  vertical-align: middle;
 }
