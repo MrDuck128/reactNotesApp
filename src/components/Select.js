@@ -1,10 +1,10 @@
 const Select = ({ setType, setGroup }) => {
 
-  const handleChangeType = (e) => {
+  const handleChangeType = e => {
     setType(e.target.value);
   };
 
-  const handleChangeGroup = (e) => {
+  const handleChangeGroup = e => {
     setGroup(e.target.value);
   };
 
@@ -15,12 +15,12 @@ const Select = ({ setType, setGroup }) => {
           value='all' 
           name='type' 
           onChange={handleChangeType} 
-        /> All<br></br>
+        /> All<br />
         <input type='radio' 
           value='todo' 
           name='type' 
           onChange={handleChangeType} 
-        /> Todo<br></br>
+        /> Todo<br />
         <input type='radio' 
           value='note' 
           name='type' 
@@ -29,8 +29,8 @@ const Select = ({ setType, setGroup }) => {
       </div>
       
       <div className='selectGroup'>
-        <input type='radio' value='work' name='group' onChange={handleChangeGroup} /> Work<br></br>
-        <input type='radio' value='personal' name='group' onChange={handleChangeGroup} /> Personal<br></br>
+        <input type='radio' value='work' name='group' onChange={handleChangeGroup} /> Work<br />
+        <input type='radio' value='personal' name='group' onChange={handleChangeGroup} /> Personal<br />
         <input type='radio' value='random' name='group' onChange={handleChangeGroup} /> Random
       </div> 
     </div>

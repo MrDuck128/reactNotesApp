@@ -1,33 +1,36 @@
 import { useState } from "react";
 
-function Form({ setNotes }) {
-  const [input, setInput] = useState('');
-  let nextId = 4;
+let nextId = 4;
 
-  function checkValidInput(input) {
-    return new RegExp('^(todo|note):{1}(work|personal|random):{1}[a-zA-Z].*').test(input);
-  }
+const checkValidInput = input => {
+  return new RegExp('^(todo|note):{1}(work|personal|random):{1}[a-zA-Z].*').test(input);
+};
+
+const Form = ({ setNotes }) => {
+  const [input, setInput] = useState('');
   
-  function handleSubmit(input) {
+  const handleSubmit = (input) => {
     if (checkValidInput(input)) {
       addNote(input);
     }
     else {
       alert('Invalid input!');
     }
-  }
+  };
   
-  function addNote(input) {
+  const addNote = input => {
     const [type, group, content] = input.split(':');
 
-    setNotes(notes => [...notes, {
-      id: nextId++,
-      type: type,
-      group: group,
-      content: content
-    }]);
-
-  }
+    setNotes(notes => [
+      ...notes,
+      {
+        id: nextId++,
+        type,
+        group,
+        content
+      }
+    ]);
+  };
 
   return (
     <div className='formPadding'>
@@ -44,6 +47,6 @@ function Form({ setNotes }) {
       </form>
     </div>
   );
-}
+};
 
 export default Form;
