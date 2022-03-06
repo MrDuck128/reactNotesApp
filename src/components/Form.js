@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-function Form({ notes, setNotes }) {
-  const [input, setInput] = useState('')
+function Form({ setNotes }) {
+  const [input, setInput] = useState('');
   let nextId = 4;
 
   function checkValidInput(input) {
@@ -35,11 +35,11 @@ function Form({ notes, setNotes }) {
         e.preventDefault();
         handleSubmit(input);
         setInput('');
-        }}>
+      }}>
 
         <input value={input} onChange={e => {
-          setInput(e.target.value)
-          }} placeholder='type:group:content' />
+          setInput(e.target.value);
+        }} placeholder='type:group:content' />
         <button className='separator'>Add note</button>
       </form>
     </div>

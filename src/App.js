@@ -2,12 +2,12 @@ import { useState } from 'react';
 import Form from './components/Form';
 import NoteDisplay from './components/NoteDisplay';
 import Select from './components/Select';
-import { notesList } from './notes'
+import { notesList } from './notes';
 
-function App() {
+const App = () => {
   const [notes, setNotes] = useState(notesList);
-  const [type, setType] = useState('all')
-  const [group, setGroup] = useState('')
+  const [type, setType] = useState('all');
+  const [group, setGroup] = useState('');
 
   return (
     <div className='page'>
@@ -16,6 +16,6 @@ function App() {
       <NoteDisplay notes={notes} type={type} group={group} />
     </div>
   );
-}
+};
 
 export default App;
