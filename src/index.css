@@ -50,11 +50,20 @@ code {
   padding-top: 5%;
   padding-left: 5%;
   padding: 1em 2em;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .selectGroup {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   padding: 1em 1em;
   vertical-align: middle;
+}
+
+.selectGroupLabel {
+  padding: .2em;
+  margin: .2em;
+  cursor: pointer;
 }
