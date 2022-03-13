@@ -1,19 +1,3 @@
-const NoteDisplay = ({ notes, type, group }) => {
-  return (
-    <div className="form">
-      {notes.map((note, index) => {
-        if (type === "all" || ((type === note.type) && (group === note.group))) {
-          return <Note key={index} note={note} />;
-        }
-        else {
-          return;
-        }
-      })
-      }
-    </div>
-  );
-};
-
 const Note = ({ note }) => {
   const { type, group, content } = note;
 
@@ -25,6 +9,16 @@ const Note = ({ note }) => {
       <div>
         {content}
       </div>
+    </div>
+  );
+};
+
+const NoteDisplay = ({ notes, type, group }) => {
+  notes = notes.filter(note => (type === "all" || ((type === note.type) && (group === note.group))));
+
+  return (
+    <div className="form">
+      {notes.map((note, index) => <Note key={index} note={note} />)}
     </div>
   );
 };
